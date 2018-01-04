@@ -1,4 +1,4 @@
-# rbenv-vars
+# rbenv-vars (disabled interpolation fork)
 
 This is a plugin for [rbenv](https://github.com/rbenv/rbenv)
 that lets you set global and project-specific environment variables
@@ -20,9 +20,9 @@ one variable per line, in the format `VAR=value`. For example:
     RUBY_FREE_MIN=4096
 
 You can perform variable substitution with the traditional `$`
-syntax. For example, to append to `GEM_PATH`:
+syntax. Use != to enable interpolation.  For example, to append to `GEM_PATH`:
 
-    GEM_PATH=$GEM_PATH:/u/shared/gems
+    GEM_PATH!=$GEM_PATH:/u/shared/gems
 
 You may also have conditional variable assignments, such that a
 variable will **only** be set if it is not already defined or is blank:
